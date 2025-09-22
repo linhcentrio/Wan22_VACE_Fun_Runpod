@@ -52,9 +52,7 @@ RUN cd /ComfyUI/custom_nodes && \
     pip install -r requirements.txt
 
 RUN cd /ComfyUI/custom_nodes && \
-    git clone https://github.com/kijai/ComfyUI-segment-anything-2 && \
-    cd ComfyUI-segment-anything-2 && \
-    pip install -r requirements.txt
+    git clone https://github.com/kijai/ComfyUI-segment-anything-2
 
 RUN cd /ComfyUI/custom_nodes && \
     git clone https://github.com/kijai/ComfyUI-Florence2 && \
@@ -89,3 +87,4 @@ COPY . .
 RUN chmod +x /entrypoint.sh
 
 CMD ["/entrypoint.sh"]
+
