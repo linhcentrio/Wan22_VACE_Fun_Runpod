@@ -15,6 +15,9 @@ RUN git clone https://github.com/comfyanonymous/ComfyUI.git && \
     cd /ComfyUI && \
     pip install -r requirements.txt
 
+# Create model directories first
+RUN mkdir -p /ComfyUI/models/sam2
+
 # Install custom nodes for VACE workflow
 RUN cd /ComfyUI/custom_nodes && \
     git clone https://github.com/Comfy-Org/ComfyUI-Manager.git && \
@@ -87,4 +90,5 @@ COPY . .
 RUN chmod +x /entrypoint.sh
 
 CMD ["/entrypoint.sh"]
+
 
